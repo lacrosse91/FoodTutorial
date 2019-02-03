@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuX-Lc-w9u">
-                                <rect key="frame" x="0.0" y="33" width="375" height="133"/>
+                                <rect key="frame" x="0.0" y="33" width="375" height="534"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEh-Mc-A4R">
                                         <rect key="frame" x="20" y="83" width="151" height="30"/>
@@ -43,10 +43,23 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myImage" translatesAutoresizingMaskIntoConstraints="NO" id="OSy-KR-bEo">
+                                        <rect key="frame" x="8" y="117" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="GIO-sI-e1a"/>
+                                            <constraint firstAttribute="height" constant="320" id="OtU-CD-241"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="V8L-39-02d" appends="YES" id="7nv-Bm-QhF"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="133" id="A3S-xP-2H8"/>
+                                    <constraint firstItem="OSy-KR-bEo" firstAttribute="leading" secondItem="SuX-Lc-w9u" secondAttribute="leading" constant="8" id="6O8-oL-sx3"/>
+                                    <constraint firstAttribute="trailing" secondItem="OSy-KR-bEo" secondAttribute="trailing" constant="47" id="Ym8-QE-Q1x"/>
+                                    <constraint firstAttribute="bottom" secondItem="OSy-KR-bEo" secondAttribute="bottom" constant="97" id="nap-np-tDQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -55,17 +68,27 @@
                             <constraint firstItem="SuX-Lc-w9u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2DU-B3-gzv"/>
                             <constraint firstAttribute="trailing" secondItem="SuX-Lc-w9u" secondAttribute="trailing" id="Fck-pB-XVU"/>
                             <constraint firstItem="SuX-Lc-w9u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="gei-ly-Y5q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SuX-Lc-w9u" secondAttribute="bottom" constant="100" id="xt1-bE-n7A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="0nO-w3-BaY" id="efY-ad-GXT"/>
                         <outlet property="nameTextField" destination="dCe-Zl-xCN" id="ouF-JU-9he"/>
+                        <outlet property="photoImageView" destination="OSy-KR-bEo" id="MFG-cv-qmn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="V8L-39-02d">
+                    <connections>
+                        <action selector="selectImagePhotoLibrary:" destination="BYZ-38-t0r" id="u1u-fd-kjp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="360.80000000000001" y="-15.742128935532236"/>
+            <point key="canvasLocation" x="-6" y="-22"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="myImage" width="186" height="167"/>
+    </resources>
 </document>
