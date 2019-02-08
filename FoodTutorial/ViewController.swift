@@ -13,15 +13,32 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
+
+    @IBOutlet weak var imageSetButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         nameTextField.delegate = self
     }
+    
 
     @IBAction func setDeafaulTextLabel(_ sender: Any) {
         mealNameLabel.text = "Default Text"
     }
+    @IBAction func setImageButton(_ sender: UIButton) {
+        nameTextField.resignFirstResponder()
+
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+
     @IBAction func selectImagePhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
         nameTextField.resignFirstResponder()

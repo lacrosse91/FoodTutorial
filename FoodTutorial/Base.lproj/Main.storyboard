@@ -54,6 +54,14 @@
                                             <outletCollection property="gestureRecognizers" destination="V8L-39-02d" appends="YES" id="7nv-Bm-QhF"/>
                                         </connections>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqj-ds-aXV">
+                                        <rect key="frame" x="94" y="206" width="148" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="button"/>
+                                        <connections>
+                                            <action selector="setImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lgj-f2-y5j"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -73,6 +81,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageSetButton" destination="gqj-ds-aXV" id="6a8-wL-uKv"/>
                         <outlet property="mealNameLabel" destination="0nO-w3-BaY" id="efY-ad-GXT"/>
                         <outlet property="nameTextField" destination="dCe-Zl-xCN" id="ouF-JU-9he"/>
                         <outlet property="photoImageView" destination="OSy-KR-bEo" id="MFG-cv-qmn"/>
@@ -85,7 +94,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-6" y="-22"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="-22.03898050974513"/>
         </scene>
     </scenes>
     <resources>
